@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zarejestruj się</title>
+</head>
+<body>
+
+    <h1>Zarejestruj się</h1>
+
+    <form  method="post" action="/register">
+        <div>
+        <label for="">Podaj swoje imię</label>
+        <input name="firstname" type="text"  placeholder="Wpisz swój adres email">
+    
+        </div>
+        <div>
+            <label for="">Hasło</label>
+            <input type="password" name="password" placeholder="Podaj hasło">
+        </div>
+        <div>
+            <label for="">Email</label>
+            <input type="email" name="email" placeholder="Podaj email">
+        </div>
+
+
+        <button type="submit">Rejestracja</button>
+
+
+    </form>
+ 
+    {% if error %}
+    <p>{{error}}</p>
+    {%endif%}
+</body>
+</html>

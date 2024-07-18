@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zaloguj się</title>
+</head>
+<body>
+
+    <h1>Zaloguj się</h1>
+
+    <form  method="post" action="/login">
+        <div>
+        <label for="">Adres e mail</label>
+        <input name="email" type="text"  placeholder="Wpisz swój adres email">
+    
+        </div>
+        <div>
+            <label for="">Hasło</label>
+            <input type="password" name="password" placeholder="Podaj hasło">
+        </div>
+
+
+        <button type="submit">Logowanie</button>
+
+
+    </form>
+ 
+    {% if error %}
+    <p>{{error}}</p>
+    {%endif%}
+</body>
+</html>
