@@ -1,13 +1,11 @@
+{% extends 'layout.html' %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-<h1>Dzień dobry {{user['data']['firstname']}}</h1>
-<i>{{user['data']['email']}}</i>
-</body>
-</html>
+{% block content %}
+    <h1>Dzień dobry {{user['data']['firstname']}} </h1>
+    <i>
+        {{user['data']['email']}}
+    </i>
+
+    <a class = 'btn btn-secondary' href="/logout">Wyloguj się</a>
+  
+{% endblock %}

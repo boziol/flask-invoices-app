@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+{{invoice['invoice_number']}}
+{% endblock%}
+
+{% block content %}
+
+<h1>{{invoice['invoice_number']}}</h1>
+<div>
+    <strong>Nazwa towaru</strong>
+    <p>{{invoice['item_name']}}</p>
+</div>
+<div>
+    <strong>Ilość</strong>
+    <p>{{invoice['item_quantity']}}</p>
+</div>
+<div>
+    <strong>Cena za sztukę</strong>
+    <p>{{invoice['item_price']}}</p>
+</div>
+
+
+<a class="btn btn-secondary" href="/moje-faktury">Powrót</a>
+
+
+
+
+
+{% endblock %}

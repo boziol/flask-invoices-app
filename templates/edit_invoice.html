@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+    <h1>Edycja {{invoice['invoice_number']}} </h1>
+
+            <a class ='btn btn- primary' href ='/moje-faktury'>Wróć</a>
+            <div class="container">
+            <form method="post" novalidate>
+              {{form.hidden_tag()}}
+  
+              {% for field in form if not field.name == 'csrf_token' %}
+              <div class= "form-group">
+                
+
+                  {% if field.name == 'submit' %}
+                    {{field (class='form-control btn btn-success mt-2', value='Aktualizuj')}}
+                  {% else %} 
+                    {{field.label(class='form-control-label')}}
+                    {{field(class='form-control', value=invoice[field.name])}} 
+                  {% endif %} 
+
+                  {% for error in field.errors %}
+                   <span style="color:red">{{error}}</span>
+                  {%endfor%}
+              </div>
+              {% endfor %}
+            </form>
+          </div>
+          </div>
+    
+
+{% endblock %}
